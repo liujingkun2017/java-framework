@@ -3,6 +3,8 @@ package org.liujk.java.framework.boot.starter.jdbc.druid;
 import com.alibaba.druid.pool.DruidDataSource;
 import lombok.Data;
 import org.liujk.java.framework.boot.starter.jdbc.config.JDBCProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 
@@ -12,6 +14,8 @@ import java.util.Properties;
  * druid数据源基本配置信息
  */
 @Data
+@Component
+@ConfigurationProperties(prefix = JDBCProperties.PREFIX)
 public class DruidProperties {
 
     public static final int DEFAULT_SLOW_SQL_THRESHOLD = 1000;

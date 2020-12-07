@@ -11,5 +11,12 @@
 
     <artifactId>framework-sample-boot-starter-jdbc</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.liujk.java.framework</groupId>
+            <artifactId>framework-boot-starter-jdbc</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

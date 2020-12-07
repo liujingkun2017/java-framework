@@ -98,7 +98,9 @@ public class ApplicationRunListener implements SpringApplicationRunListener, Pri
     }
 
     public static class AppBanner implements Banner {
+
         private static List<String> infos = Lists.newArrayList();
+
         private FrameworkBootApplication application;
 
         public AppBanner(FrameworkBootApplication application) {
