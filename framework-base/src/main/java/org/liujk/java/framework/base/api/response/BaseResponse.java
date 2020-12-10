@@ -77,7 +77,6 @@ public class BaseResponse extends SerializableObject {
      *
      * @param resultCode
      *
-     * @see BaseResponse#setStatus(com.cqfae.pmo.base.api.ResultCodeable)
      */
     @Deprecated
     @JSONField(deserialize = false)
