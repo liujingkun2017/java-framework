@@ -4,3 +4,6 @@ server:
 starter:
   jdbc:
     enable: true
+    url: jdbc:mysql://localhost:3306/spring_boot_plus?useUnicode=true&characterEncoding=UTF-8&useSSL=false&useLocalSessionState=true
+    username: root
+    password: 246437

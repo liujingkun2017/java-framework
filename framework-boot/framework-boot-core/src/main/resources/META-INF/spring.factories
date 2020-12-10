@@ -1,0 +1,1 @@
+org.springframework.boot.SpringApplicationRunListener=org.liujk.java.framework.boot.starter.core.listener.ApplicationRunListener

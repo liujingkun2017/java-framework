@@ -6,16 +6,8 @@ import org.liujk.java.framework.base.api.SerializableObject;
 @Data
 public class ApplicationRunListenerState extends SerializableObject {
 
+    /**
+     * 程序初始化状态
+     */
     private boolean inited = false;
-
-    private boolean starting = false;
-
-    private boolean environmentPrepared = false;
-
-    private boolean contextPrepared = false;
-
-    private boolean contextLoaded = false;
-
-    private boolean finished = false;
-
 }

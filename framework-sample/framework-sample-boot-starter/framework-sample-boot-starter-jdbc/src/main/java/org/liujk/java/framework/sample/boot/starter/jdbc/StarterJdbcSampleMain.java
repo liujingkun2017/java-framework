@@ -5,12 +5,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @FrameworkBootApplication(appName = "sample-boot-starter-jdbc", httpPort = 8080)
-public class Main {
+public class StarterJdbcSampleMain {
 
     public static void main(String[] args) {
 
         ConfigurableApplicationContext applicationContext
-                = new SpringApplication(Main.class).run(args);
+                = new SpringApplication(StarterJdbcSampleMain.class).run(args);
 
         System.out.println("启动应用");
     }

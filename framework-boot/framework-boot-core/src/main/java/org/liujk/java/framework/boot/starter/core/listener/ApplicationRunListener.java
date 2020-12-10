@@ -1,6 +1,5 @@
 package org.liujk.java.framework.boot.starter.core.listener;
 
-import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import org.liujk.java.framework.boot.starter.core.FrameworkBootApplication;
 import org.liujk.java.framework.boot.starter.core.env.HightPriorityPropertySourceHelper;
