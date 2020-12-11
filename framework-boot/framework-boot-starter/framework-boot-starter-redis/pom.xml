@@ -3,20 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>framework-sample-boot-starter</artifactId>
+        <artifactId>framework-boot-starter</artifactId>
         <groupId>org.liujk.java.framework</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>framework-sample-boot-starter-web</artifactId>
+    <artifactId>framework-boot-starter-redis</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
 
     <dependencies>
+
         <dependency>
-            <groupId>org.liujk.java.framework</groupId>
-            <artifactId>framework-boot-starter-web</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
