@@ -1,10 +1,8 @@
 package org.liujk.java.framework.boot.starter.redis.config;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.util.Assert;
 
-@Data
 @ConfigurationProperties(RedisProperties.PREFIX)
 public class RedisProperties {
 
@@ -83,7 +81,6 @@ public class RedisProperties {
     /**
      * 连接池属性
      */
-    @Data
     public static class Pool {
         /**
          * 最大连接数
@@ -141,6 +138,109 @@ public class RedisProperties {
          */
         private long minEvictableIdleTimeMillis = 1800000;
 
+        public int getMaxTotal() {
+            return maxTotal;
+        }
+
+        public void setMaxTotal(int maxTotal) {
+            this.maxTotal = maxTotal;
+        }
+
+        public int getMaxIdle() {
+            return maxIdle;
+        }
+
+        public void setMaxIdle(int maxIdle) {
+            this.maxIdle = maxIdle;
+        }
+
+        public int getMinIdle() {
+            return minIdle;
+        }
+
+        public void setMinIdle(int minIdle) {
+            this.minIdle = minIdle;
+        }
+
+        public int getMaxWaitMillis() {
+            return maxWaitMillis;
+        }
+
+        public void setMaxWaitMillis(int maxWaitMillis) {
+            this.maxWaitMillis = maxWaitMillis;
+        }
+
+        public boolean isBlockWhenExhausted() {
+            return blockWhenExhausted;
+        }
+
+        public void setBlockWhenExhausted(boolean blockWhenExhausted) {
+            this.blockWhenExhausted = blockWhenExhausted;
+        }
+
+        public boolean isLifo() {
+            return lifo;
+        }
+
+        public void setLifo(boolean lifo) {
+            this.lifo = lifo;
+        }
+
+        public boolean isTestOnBorrow() {
+            return testOnBorrow;
+        }
+
+        public void setTestOnBorrow(boolean testOnBorrow) {
+            this.testOnBorrow = testOnBorrow;
+        }
+
+        public boolean isTestOnReturn() {
+            return testOnReturn;
+        }
+
+        public void setTestOnReturn(boolean testOnReturn) {
+            this.testOnReturn = testOnReturn;
+        }
+
+        public boolean isTestWhileIdle() {
+            return testWhileIdle;
+        }
+
+        public void setTestWhileIdle(boolean testWhileIdle) {
+            this.testWhileIdle = testWhileIdle;
+        }
+
+        public int getNumTestsPerEvictionRun() {
+            return numTestsPerEvictionRun;
+        }
+
+        public void setNumTestsPerEvictionRun(int numTestsPerEvictionRun) {
+            this.numTestsPerEvictionRun = numTestsPerEvictionRun;
+        }
+
+        public long getTimeBetweenEvictionRunsMillis() {
+            return timeBetweenEvictionRunsMillis;
+        }
+
+        public void setTimeBetweenEvictionRunsMillis(long timeBetweenEvictionRunsMillis) {
+            this.timeBetweenEvictionRunsMillis = timeBetweenEvictionRunsMillis;
+        }
+
+        public long getSoftMinEvictableIdleTimeMillis() {
+            return softMinEvictableIdleTimeMillis;
+        }
+
+        public void setSoftMinEvictableIdleTimeMillis(long softMinEvictableIdleTimeMillis) {
+            this.softMinEvictableIdleTimeMillis = softMinEvictableIdleTimeMillis;
+        }
+
+        public long getMinEvictableIdleTimeMillis() {
+            return minEvictableIdleTimeMillis;
+        }
+
+        public void setMinEvictableIdleTimeMillis(long minEvictableIdleTimeMillis) {
+            this.minEvictableIdleTimeMillis = minEvictableIdleTimeMillis;
+        }
     }
 
     /**
@@ -153,5 +253,107 @@ public class RedisProperties {
         }
     }
 
+    public boolean isEnable() {
+        return enable;
+    }
 
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
+    public boolean isSentinel() {
+        return sentinel;
+    }
+
+    public void setSentinel(boolean sentinel) {
+        this.sentinel = sentinel;
+    }
+
+    public boolean isCluster() {
+        return cluster;
+    }
+
+    public void setCluster(boolean cluster) {
+        this.cluster = cluster;
+    }
+
+    public String[] getServerAddress() {
+        return serverAddress;
+    }
+
+    public void setServerAddress(String[] serverAddress) {
+        this.serverAddress = serverAddress;
+    }
+
+    public String getMasterName() {
+        return masterName;
+    }
+
+    public void setMasterName(String masterName) {
+        this.masterName = masterName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getDatabase() {
+        return database;
+    }
+
+    public void setDatabase(int database) {
+        this.database = database;
+    }
+
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public int getTimeOut() {
+        return timeOut;
+    }
+
+    public void setTimeOut(int timeOut) {
+        this.timeOut = timeOut;
+    }
+
+    public int getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(int expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public boolean isMessageEnable() {
+        return messageEnable;
+    }
+
+    public void setMessageEnable(boolean messageEnable) {
+        this.messageEnable = messageEnable;
+    }
+
+    public String getThreadPoolBeanName() {
+        return threadPoolBeanName;
+    }
+
+    public void setThreadPoolBeanName(String threadPoolBeanName) {
+        this.threadPoolBeanName = threadPoolBeanName;
+    }
+
+    public Pool getPool() {
+        return pool;
+    }
+
+    public void setPool(Pool pool) {
+        this.pool = pool;
+    }
 }

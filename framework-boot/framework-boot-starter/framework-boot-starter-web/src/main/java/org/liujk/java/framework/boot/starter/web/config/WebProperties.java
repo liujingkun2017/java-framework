@@ -1,9 +1,7 @@
 package org.liujk.java.framework.boot.starter.web.config;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@Data
 @ConfigurationProperties(WebProperties.PREFIX)
 public class WebProperties {
 
@@ -14,4 +12,11 @@ public class WebProperties {
      */
     private int cacheMaxAge = -1;
 
+    public int getCacheMaxAge() {
+        return cacheMaxAge;
+    }
+
+    public void setCacheMaxAge(int cacheMaxAge) {
+        this.cacheMaxAge = cacheMaxAge;
+    }
 }

@@ -1,12 +1,10 @@
 package org.liujk.java.framework.boot.starter.web.config;
 
 import com.google.common.collect.Maps;
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.Map;
 
-@Data
 @ConfigurationProperties(WebResponseProperties.PREFIX)
 public class WebResponseProperties {
 
@@ -22,4 +20,11 @@ public class WebResponseProperties {
         headers.put("App-Name", "appName");
     }
 
+    public Map<String, String> getHeaders() {
+        return headers;
+    }
+
+    public void setHeaders(Map<String, String> headers) {
+        this.headers = headers;
+    }
 }
