@@ -1,5 +1,6 @@
 package org.liujk.java.framework.boot.starter.core;
 
+import org.liujk.java.framework.boot.starter.core.env.EnvironmentHolder;
 import org.liujk.java.framework.boot.starter.core.exception.AppConfigException;
 
 public class ApplicationInfo {
@@ -16,7 +17,7 @@ public class ApplicationInfo {
      * @return
      */
     public static String getAppName() {
-        String name = "test";// todo  EnvironmentHolder.getProperty(APP_NAME);
+        String name = EnvironmentHolder.getProperty(APP_NAME);
         if (name == null) {
             throw new AppConfigException("没有设置应用名称,请设置系统变量" + APP_NAME);
         }
@@ -29,7 +30,8 @@ public class ApplicationInfo {
      * @return
      */
     public static String getBasePackage() {
-        return "test";// todo EnvironmentHolder.getProperty(BASE_PACKAGE);
+        return EnvironmentHolder.getProperty(BASE_PACKAGE);
     }
+
 
 }
