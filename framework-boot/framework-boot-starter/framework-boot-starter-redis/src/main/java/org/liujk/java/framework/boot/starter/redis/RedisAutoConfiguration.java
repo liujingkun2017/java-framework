@@ -1,6 +1,9 @@
 package org.liujk.java.framework.boot.starter.redis;
 
 import org.liujk.java.framework.boot.starter.redis.config.RedisProperties;
+import org.liujk.java.framework.boot.starter.redis.message.produce.MessageListenerAnnotationBeanPostProcessor;
+import org.liujk.java.framework.boot.starter.redis.message.produce.MessageProducer;
+import org.liujk.java.framework.boot.starter.redis.message.produce.RedisMessageProducer;
 import org.liujk.java.framework.boot.starter.redis.serializer.KryoSerializer;
 import org.liujk.java.framework.boot.starter.redis.serializer.RedisKeySerializer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +54,21 @@ public class RedisAutoConfiguration {
         return jedisConnectionFactory;
     }
 
+    @Bean
+    @ConditionalOnProperty(prefix = RedisProperties.PREFIX, name = {"messageEnable", "sentinel"})
+    public MessageProducer redisMessageProducer(RedisProperties redisProperties,
+                                                RedisConnectionFactory redisConnectionFactory) {
+        return new RedisMessageProducer(redisProperties.getNamespace(), redisConnectionFactory);
+    }
+
+    @Bean
+    @ConditionalOnProperty(prefix = RedisProperties.PREFIX, name = {"messageEnable", "sentinel"})
+    public MessageListenerAnnotationBeanPostProcessor messageListenerAnnotationBeanPostProcessor(
+            RedisProperties redisProperties,
+            RedisConnectionFactory redisConnectionFactory) {
+        return new MessageListenerAnnotationBeanPostProcessor(redisProperties.getNamespace(), redisConnectionFactory);
+    }
+
     private JedisConnectionFactory createJedisConnectionFactory(RedisProperties redisProperties) {
         JedisPoolConfig poolConfig = jedisPoolConfig(redisProperties);
         if (redisProperties.isSentinel()) {
@@ -73,13 +91,17 @@ public class RedisAutoConfiguration {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxTotal(pool.getMaxTotal());
         jedisPoolConfig.setMaxIdle(pool.getMaxIdle());
-        jedisPoolConfig.setMaxWaitMillis(pool.getMaxWaitMillis());
-        jedisPoolConfig.setTestOnBorrow(pool.isTestOnBorrow());
-        jedisPoolConfig.setTestWhileIdle(pool.isTestWhileIdle());
-        jedisPoolConfig.setTestOnReturn(pool.isTestOnReturn());
-        jedisPoolConfig.setBlockWhenExhausted(pool.isBlockWhenExhausted());
         jedisPoolConfig.setMinIdle(pool.getMinIdle());
+        jedisPoolConfig.setMaxWaitMillis(pool.getMaxWaitMillis());
+        jedisPoolConfig.setBlockWhenExhausted(pool.isBlockWhenExhausted());
         jedisPoolConfig.setLifo(pool.isLifo());
+        jedisPoolConfig.setTestOnBorrow(pool.isTestOnBorrow());
+        jedisPoolConfig.setTestOnReturn(pool.isTestOnReturn());
+        jedisPoolConfig.setTestWhileIdle(pool.isTestWhileIdle());
+        jedisPoolConfig.setNumTestsPerEvictionRun(pool.getNumTestsPerEvictionRun());
+        jedisPoolConfig.setTimeBetweenEvictionRunsMillis(pool.getTimeBetweenEvictionRunsMillis());
+        jedisPoolConfig.setSoftMinEvictableIdleTimeMillis(pool.getSoftMinEvictableIdleTimeMillis());
+        jedisPoolConfig.setMinEvictableIdleTimeMillis(pool.getMinEvictableIdleTimeMillis());
         return jedisPoolConfig;
     }
 

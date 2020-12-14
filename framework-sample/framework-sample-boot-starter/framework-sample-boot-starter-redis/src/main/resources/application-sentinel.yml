@@ -1,0 +1,26 @@
+starter:
+  redis:
+    enable: true
+    sentinel: true
+    cluster: false
+    serverAddress: 10.7.141.46:26379,10.7.141.46:26380,10.7.141.46:26381
+    masterName: mymaster
+    password:
+    namespace: framework-sample-boot-starter-redis
+    messageEnable: true
+#    pool:
+#      maxTotal: 100
+#      maxIdle: 20
+#      minIdle: 10
+#      maxWaitMillis: 2000
+#      blockWhenExhausted: true
+#      lifo: true
+#      testOnBorrow: true
+#      testOnReturn: true
+#      testWhileIdle: true
+#      numTestsPerEvictionRun: 3
+#      timeBetweenEvictionRunsMillis: 10000
+#      softMinEvictableIdleTimeMillis: -1
+#      minEvictableIdleTimeMillis: 1800000
+
+

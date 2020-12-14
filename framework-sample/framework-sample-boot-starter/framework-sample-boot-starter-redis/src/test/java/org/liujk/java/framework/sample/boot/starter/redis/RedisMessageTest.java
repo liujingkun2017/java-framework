@@ -1,29 +1,28 @@
 package org.liujk.java.framework.sample.boot.starter.redis;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.liujk.java.framework.sample.boot.starter.redis.message.SampleRedisMessageProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = {StarterRedisSampleMain.class})
-public class RedisTest {
+public class RedisMessageTest {
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private SampleRedisMessageProvider sampleRedisMessageProvider;
 
-    /**
-     * 测试redis的基本操作
-     */
     @Test
-    public void redisMethodTest() {
+    public void sendMessageTest() {
 
-        redisTemplate.opsForValue().set("sample-boot-starter-redis-key123", "123");
-        String result = (String) redisTemplate.opsForValue().get("sample-boot-starter-redis-key");
-        System.out.println("result=" + result);
+        String message = "this is a sample message from test case";
+        sampleRedisMessageProvider.sendMessage1(message);
+        sampleRedisMessageProvider.sendMessage2(message);
 
     }
+
 
 }

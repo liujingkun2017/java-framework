@@ -1,9 +1,4 @@
-starter:
-  redis:
-    enable: true
-    sentinel: false
-    cluster: false
-    serverAddress: 127.0.0.1:6379
-    password:
-    namespace: framework-sample-boot-starter-redis
+spring:
+  profiles:
+    active: sentinel
 

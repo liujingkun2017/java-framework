@@ -13,6 +13,12 @@ public class StarterRedisSampleMain {
                 new SpringApplication(StarterRedisSampleMain.class).run(args);
 
         System.out.println("启动应用");
+
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
