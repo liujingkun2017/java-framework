@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties({WebProperties.class,
         WebRequestProperties.class,
         WebResponseProperties.class})
-public class WebAutoConfiguration {
+public class WebStarterAutoConfiguration {
 
     /**
      * 响应头部处理

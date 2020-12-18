@@ -26,7 +26,7 @@ import java.util.List;
 @Configuration
 @EnableConfigurationProperties(RedisProperties.class)
 @ConditionalOnProperty(prefix = RedisProperties.PREFIX, name = "enable", matchIfMissing = true)
-public class RedisAutoConfiguration {
+public class RedisStarterAutoConfiguration {
 
     @Autowired
     private RedisProperties redisProperties;

@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.liujk.java.framework.boot.starter.redis.RedisAutoConfiguration
+org.liujk.java.framework.boot.starter.redis.RedisStarterAutoConfiguration

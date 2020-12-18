@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableConfigurationProperties({DruidProperties.class})
 @ConditionalOnProperty(prefix = JDBCProperties.PREFIX, name = "enable", matchIfMissing = true)
-public class JDBCAutoConfiguration {
+public class JDBCStarterAutoConfiguration {
 
     @Autowired
     private DruidProperties druidProperties;

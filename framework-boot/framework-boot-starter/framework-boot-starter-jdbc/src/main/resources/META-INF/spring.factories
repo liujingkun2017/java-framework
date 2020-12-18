@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.liujk.java.framework.boot.starter.jdbc.JDBCAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.liujk.java.framework.boot.starter.jdbc.JDBCStarterAutoConfiguration

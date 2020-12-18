@@ -3,28 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>framework-boot</artifactId>
+        <artifactId>framework-sample-boot-starter</artifactId>
         <groupId>org.liujk.java.framework</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>framework-boot-starter</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>framework-boot-starter-jdbc</module>
-        <module>framework-boot-starter-web</module>
-        <module>framework-boot-starter-redis</module>
-        <module>framework-boot-starter-kafka</module>
-    </modules>
+    <artifactId>framework-sample-boot-starter-kafka</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.liujk.java.framework</groupId>
-            <artifactId>framework-boot-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <artifactId>framework-boot-starter-kafka</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 
 </project>
