@@ -1,6 +1,7 @@
 package org.liujk.java.framework.boot.starter.jdbc.druid;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import lombok.Data;
 import org.liujk.java.framework.boot.starter.jdbc.config.JDBCProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import java.util.Properties;
 /**
  * druid数据源基本配置信息
  */
+@Data
 @Component
 @ConfigurationProperties(prefix = JDBCProperties.PREFIX)
 public class DruidProperties {
@@ -244,171 +246,4 @@ public class DruidProperties {
         return dataSource;
     }
 
-    public String getPrefix() {
-        return prefix;
-    }
-
-    public void setPrefix(String prefix) {
-        this.prefix = prefix;
-    }
-
-    public boolean isEnable() {
-        return enable;
-    }
-
-    public void setEnable(boolean enable) {
-        this.enable = enable;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getInitialSize() {
-        return initialSize;
-    }
-
-    public void setInitialSize(Integer initialSize) {
-        this.initialSize = initialSize;
-    }
-
-    public Integer getMinIdle() {
-        return minIdle;
-    }
-
-    public void setMinIdle(Integer minIdle) {
-        this.minIdle = minIdle;
-    }
-
-    public Integer getMaxActive() {
-        return maxActive;
-    }
-
-    public void setMaxActive(Integer maxActive) {
-        this.maxActive = maxActive;
-    }
-
-    public Integer getMaxWait() {
-        return maxWait;
-    }
-
-    public void setMaxWait(Integer maxWait) {
-        this.maxWait = maxWait;
-    }
-
-    public Integer getSlowSqlThreshold() {
-        return slowSqlThreshold;
-    }
-
-    public void setSlowSqlThreshold(Integer slowSqlThreshold) {
-        this.slowSqlThreshold = slowSqlThreshold;
-    }
-
-    public Integer getMaxResultThreshold() {
-        return maxResultThreshold;
-    }
-
-    public void setMaxResultThreshold(Integer maxResultThreshold) {
-        this.maxResultThreshold = maxResultThreshold;
-    }
-
-    public boolean isShowSql() {
-        return showSql;
-    }
-
-    public void setShowSql(boolean showSql) {
-        this.showSql = showSql;
-    }
-
-    public String getValidationQuery() {
-        return validationQuery;
-    }
-
-    public void setValidationQuery(String validationQuery) {
-        this.validationQuery = validationQuery;
-    }
-
-    public boolean isTestWhileIdle() {
-        return testWhileIdle;
-    }
-
-    public void setTestWhileIdle(boolean testWhileIdle) {
-        this.testWhileIdle = testWhileIdle;
-    }
-
-    public boolean isTestOnBorrow() {
-        return testOnBorrow;
-    }
-
-    public void setTestOnBorrow(boolean testOnBorrow) {
-        this.testOnBorrow = testOnBorrow;
-    }
-
-    public boolean isTestOnReturn() {
-        return testOnReturn;
-    }
-
-    public void setTestOnReturn(boolean testOnReturn) {
-        this.testOnReturn = testOnReturn;
-    }
-
-    public long getTimeBetweenEvictionRunsMillis() {
-        return timeBetweenEvictionRunsMillis;
-    }
-
-    public void setTimeBetweenEvictionRunsMillis(long timeBetweenEvictionRunsMillis) {
-        this.timeBetweenEvictionRunsMillis = timeBetweenEvictionRunsMillis;
-    }
-
-    public boolean isRemoveAbandoned() {
-        return removeAbandoned;
-    }
-
-    public void setRemoveAbandoned(boolean removeAbandoned) {
-        this.removeAbandoned = removeAbandoned;
-    }
-
-    public int getRemoveAbandonedTimeout() {
-        return removeAbandonedTimeout;
-    }
-
-    public void setRemoveAbandonedTimeout(int removeAbandonedTimeout) {
-        this.removeAbandonedTimeout = removeAbandonedTimeout;
-    }
-
-    public boolean isLogAbandoned() {
-        return logAbandoned;
-    }
-
-    public void setLogAbandoned(boolean logAbandoned) {
-        this.logAbandoned = logAbandoned;
-    }
-
-    public ClassLoader getBeanClassLoader() {
-        return beanClassLoader;
-    }
-
-    public void setBeanClassLoader(ClassLoader beanClassLoader) {
-        this.beanClassLoader = beanClassLoader;
-    }
 }

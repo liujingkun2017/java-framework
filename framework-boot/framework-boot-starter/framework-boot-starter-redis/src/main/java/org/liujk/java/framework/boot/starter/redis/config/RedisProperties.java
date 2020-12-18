@@ -1,8 +1,10 @@
 package org.liujk.java.framework.boot.starter.redis.config;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.util.Assert;
 
+@Data
 @ConfigurationProperties(RedisProperties.PREFIX)
 public class RedisProperties {
 
@@ -251,109 +253,5 @@ public class RedisProperties {
             Assert.notEmpty(serverAddress, String.format("Redis连接地址[%s.%s]不能为空", PREFIX, "serverAddress"));
             Assert.hasText(masterName, String.format("Redis配置的masterName [%s.%s]不能为空", PREFIX, "masterName"));
         }
-    }
-
-    public boolean isEnable() {
-        return enable;
-    }
-
-    public void setEnable(boolean enable) {
-        this.enable = enable;
-    }
-
-    public boolean isSentinel() {
-        return sentinel;
-    }
-
-    public void setSentinel(boolean sentinel) {
-        this.sentinel = sentinel;
-    }
-
-    public boolean isCluster() {
-        return cluster;
-    }
-
-    public void setCluster(boolean cluster) {
-        this.cluster = cluster;
-    }
-
-    public String[] getServerAddress() {
-        return serverAddress;
-    }
-
-    public void setServerAddress(String[] serverAddress) {
-        this.serverAddress = serverAddress;
-    }
-
-    public String getMasterName() {
-        return masterName;
-    }
-
-    public void setMasterName(String masterName) {
-        this.masterName = masterName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getDatabase() {
-        return database;
-    }
-
-    public void setDatabase(int database) {
-        this.database = database;
-    }
-
-    public String getNamespace() {
-        return namespace;
-    }
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
-
-    public int getTimeOut() {
-        return timeOut;
-    }
-
-    public void setTimeOut(int timeOut) {
-        this.timeOut = timeOut;
-    }
-
-    public int getExpireTime() {
-        return expireTime;
-    }
-
-    public void setExpireTime(int expireTime) {
-        this.expireTime = expireTime;
-    }
-
-    public boolean isMessageEnable() {
-        return messageEnable;
-    }
-
-    public void setMessageEnable(boolean messageEnable) {
-        this.messageEnable = messageEnable;
-    }
-
-    public String getThreadPoolBeanName() {
-        return threadPoolBeanName;
-    }
-
-    public void setThreadPoolBeanName(String threadPoolBeanName) {
-        this.threadPoolBeanName = threadPoolBeanName;
-    }
-
-    public Pool getPool() {
-        return pool;
-    }
-
-    public void setPool(Pool pool) {
-        this.pool = pool;
     }
 }
